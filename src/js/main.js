@@ -2,10 +2,25 @@
 const API_URL = "https://fakestoreapi.com/products";
 const productsList = document.querySelector(".js_products-list");
 const shoppingCartList = document.querySelector(".js_shopping-cart");
+const nameFilterInput = document.querySelector(".js_findFormInput");
+const findFormButton = document.querySelector(".js_findFormButton");
 
 let products = [];
 let shoppingCart = [];
 
+//FILTRO Y BOTON BUSCAR
+const handleInputNameFilter = (ev) => {
+  ev.preventDefault();
+  const nameFilter = nameFilterInput.value;
+  const filteredProducts = products.filter((productObj) =>
+    productObj.title.toLowerCase().includes(nameFilter.toLowerCase())
+  );
+  renderProducts(filteredProducts);
+};
+
+findFormButton.addEventListener("click", handleInputNameFilter);
+
+//FETCH: TRAER LOS DATOS DEL API
 function fetchProducts() {
   fetch(API_URL)
     .then((res) => res.json())
@@ -15,6 +30,8 @@ function fetchProducts() {
       renderProducts(products);
     });
 }
+
+//PINTAR LOS PRODUCTOS
 
 function renderProducts(products) {
   let html = "";
@@ -36,6 +53,8 @@ function renderProducts(products) {
 }
 
 fetchProducts();
+
+//DARLE BOTON DE COMPRAR Y SUMAR PRODUCTOS A LA CESTA
 
 productsList.addEventListener("click", (ev) => {
   ev.preventDefault();

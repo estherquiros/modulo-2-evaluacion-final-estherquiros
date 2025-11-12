@@ -14,6 +14,10 @@ body {
 }
 .header {
   border-bottom: solid 5px #efdce7;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
 .title {
@@ -69,7 +73,7 @@ body {
 
 .product-card {
   display: flex;
-  background-color: white;
+  background-color: #fff7f2;
   flex-direction: column;
   border-radius: 10px;
   justify-content: space-between;
@@ -115,7 +119,7 @@ body {
 }
 
 .footer {
-  position: fixed;
+  position: sticky;
   bottom: 0;
   left: 0;
   width: 100%;
