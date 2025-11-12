@@ -15,7 +15,7 @@ const handleInputNameFilter = (ev) => {
   const filteredProducts = products.filter((productObj) =>
     productObj.title.toLowerCase().includes(nameFilter.toLowerCase())
   );
-  renderProducts(filteredProducts);
+  renderProducts(filteredProducts, productsList);
 };
 
 findFormButton.addEventListener("click", handleInputNameFilter);
@@ -32,8 +32,9 @@ function fetchProducts() {
 }
 
 //PINTAR LOS PRODUCTOS
+//el hidden para quitar el boton
 
-function renderProducts(products, list) {
+function renderProducts(products, list, hiddenClass) {
   let html = "";
 
   for (const product of products) {
@@ -43,8 +44,8 @@ function renderProducts(products, list) {
     <h2 class="product-title">${product.title}</h2>
     </div>
     <div class="product-price-button">
-    <p class="product-price">${product.price}</p>
-    <button class="product-button" data-id="${product.id}">Buy</button>
+    <p class="product-price">${product.price}€</p>
+    <button class="product-button ${hiddenClass}" data-id="${product.id}">Buy</button>
     </div>
     </li>`;
   }
@@ -75,7 +76,8 @@ productsList.addEventListener("click", (ev) => {
     shoppingCart.push(product);
   }
 
-  renderProducts(shoppingCart, shoppingCartList);
+  //el hidden para quitar el boton
+  renderProducts(shoppingCart, shoppingCartList, "hidden");
 
   console.log(shoppingCart);
 });
