@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>1.N Título</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="./images/favicon.png" />
+    <link rel="stylesheet" crossorigin href="./assets/index-BmAbeLJX.css">
+  </head>
+
+  <body>
+    <header class="header">
+      <h1 class="title">Online Store</h1>
+    </header>
+    <main class="main">
+      <!-- Formulario para buscar productos -->
+      <form class="findForm" action="">
+        <input
+          class="findFormInput js_findFormInput"
+          type="text"
+          id=""
+          placeholder="Example: Women"
+          required
+        />
+        <button class="findFormButton js_findFormButton" type="submit">
+          Find
+        </button>
+      </form>
+
+      <section class="sectionForm">
+        <!-- SHOPPING CART -->
+        <form class="shopping-form" action="">
+          <h2 class="shopping-title">Shopping cart 🛒</h2>
+          <ul class="shopping-cart js_shopping-cart"></ul>
+        </form>
+        <!-- MOST POPULAR PRODUCTS -->
+        <form class="products-form" action="">
+          <h2 class="products-title">Most popular products 🛍</h2>
+          <ul class="products-list js_products-list"></ul>
+        </form>
+      </section>
+    </main>
+    <script src="./js/main.js"></script>
+    <footer class="footer">Online Store &copy Adalab 2025</footer>
+  </body>
+</html>
