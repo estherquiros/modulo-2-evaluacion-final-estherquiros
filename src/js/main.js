@@ -50,6 +50,12 @@ function renderProducts(products, list, hiddenClass) {
   let onCartClass = "";
 
   for (const product of products) {
+    let productImage = product.image;
+    //si el producto no tiene imagen (undefined) muestra una imagen por defecto
+    if (productImage === undefined) {
+      productImage = "https://placehold.co/600x400";
+    }
+
     //recorro la lista de la compra para ver si el producto existe dentro de ella (para saber cuando poner eliminar)
     const existsOnShoppingCart = shoppingCart.find((shpPro) => {
       return product.id === shpPro.id;
@@ -63,7 +69,7 @@ function renderProducts(products, list, hiddenClass) {
 
     html += `<li class="product-card ${onCartClass}">
     <div class="product-img-title"> 
-    <img class="product-img"src="${product.image}"/>
+    <img class="product-img"src="${productImage}"/>
     <h2 class="product-title ${onCartClass}">${product.title}</h2>
     </div>
     <div class="product-price-button">
