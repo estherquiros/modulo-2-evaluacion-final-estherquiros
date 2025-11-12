@@ -14,26 +14,35 @@
 
   <body>
     <header class="header">
-      <h1 class="title">Tienda</h1>
+      <h1 class="title">Online Store</h1>
     </header>
     <main class="main">
       <!-- Formulario para buscar productos -->
-      <form action="">
-        <input type="text" id="" placeholder="Example: Women" required />
-        <button type="submit">Find</button>
+      <form class="findForm" action="">
+        <input
+          class="findFormInput"
+          type="text"
+          id=""
+          placeholder="Example: Women"
+          required
+        />
+        <button class="findFormButton" type="submit">Find</button>
       </form>
 
-      <section>
+      <section class="sectionForm">
         <!-- SHOPPING CART -->
-        <form action="">
-          <ul class="shopping-cart"></ul>
+        <form class="shopping-form" action="">
+          <h2 class="shopping-title">Shopping cart 🛒</h2>
+          <ul class="shopping-cart js_shopping-cart"></ul>
         </form>
         <!-- MOST POPULAR PRODUCTS -->
-        <form action="">
+        <form class="products-form" action="">
+          <h2 class="products-title">Most popular products 🛍</h2>
           <ul class="products-list js_products-list"></ul>
         </form>
       </section>
     </main>
     <script src="./js/main.js"></script>
+    <footer class="footer">Online Store &copy Adalab 2025</footer>
   </body>
 </html>
