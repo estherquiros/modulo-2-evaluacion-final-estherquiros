@@ -150,6 +150,13 @@ body {
   padding: 1rem;
 }
 
+.shopping-cart {
+  padding: 0 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 .products-title {
   font-size: 1.5rem;
   text-align: center;
@@ -161,12 +168,14 @@ body {
   flex-direction: row;
   width: 100%;
   padding: 20px;
+  width: 1300px;
+  justify-self: center;
 }
 .shopping-form {
-  width: 40%;
+  width: 30%;
 }
 .products-form {
-  width: 60%;
+  width: 70%;
 }
 
 .hidden {
