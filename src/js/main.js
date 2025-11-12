@@ -34,7 +34,6 @@ function fetchProducts() {
   fetch(API_URL)
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
       products = data;
       renderProducts(products, productsList);
     });
@@ -92,18 +91,14 @@ fetchProducts();
 
 productsList.addEventListener("click", (ev) => {
   ev.preventDefault();
-  console.log(ev.target.dataset.id);
   const productId = ev.target.dataset.id;
   const product = products.find((prd) => {
     return Number(prd.id) === Number(productId);
   });
 
-  console.log(product);
-
   const existProductOnShoppingCart = shoppingCart.findIndex((prd) => {
     return Number(prd.id) === Number(productId);
   });
-  console.log(existProductOnShoppingCart);
 
   if (existProductOnShoppingCart === -1) {
     shoppingCart.push(product);
@@ -115,8 +110,6 @@ productsList.addEventListener("click", (ev) => {
   renderProducts(products, productsList);
 
   // guardar el carrito en el localStorage
-  console.log(JSON.stringify(shoppingCart));
-  localStorage.setItem("cart", JSON.stringify(shoppingCart));
 
-  console.log(shoppingCart);
+  localStorage.setItem("cart", JSON.stringify(shoppingCart));
 });
