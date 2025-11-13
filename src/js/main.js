@@ -114,6 +114,11 @@ productsList.addEventListener("click", (ev) => {
     return Number(prd.id) === Number(productId);
   });
 
+  // si hago click fuera del botón, no se encuentra el producto, por lo que me salgo fuera de la fucnión y no se ejecuta nada más
+  if (product === undefined) {
+    return;
+  }
+
   const existProductOnShoppingCart = shoppingCart.findIndex((prd) => {
     return Number(prd.id) === Number(productId);
   });
