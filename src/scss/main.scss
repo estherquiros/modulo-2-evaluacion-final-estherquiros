@@ -193,3 +193,131 @@ body {
 .hidden {
   display: none;
 }
+
+/* Media Queries para Responsive Design */
+
+/* Tablets y pantallas medianas (hasta 768px) */
+@media (max-width: 768px) {
+  .title {
+    line-height: 3rem;
+    padding-inline: 1rem;
+    font-size: 1.5rem;
+  }
+
+  .findForm {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px 20px;
+    height: auto;
+  }
+
+  .findFormInput,
+  .findFormButton {
+    font-size: 18px;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .sectionForm {
+    flex-direction: column;
+    width: 100%;
+    padding: 15px;
+  }
+
+  .shopping-form {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .products-form {
+    width: 100%;
+  }
+
+  .products-list {
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+
+  .shopping-cart {
+    padding: 0 20px;
+  }
+
+  .product-card {
+    padding: 1.5rem;
+  }
+
+  .product-img {
+    height: 120px;
+  }
+
+  .shopping-title,
+  .products-title {
+    font-size: 1.3rem;
+  }
+}
+
+/* Móviles (hasta 480px) */
+@media (max-width: 480px) {
+  .title {
+    line-height: 2.5rem;
+    padding-inline: 0.5rem;
+    font-size: 1.2rem;
+  }
+
+  .findForm {
+    gap: 10px;
+    padding: 10px 15px;
+  }
+
+  .findFormInput,
+  .findFormButton {
+    font-size: 16px;
+    padding: 8px 15px;
+  }
+
+  .sectionForm {
+    padding: 10px;
+  }
+
+  .products-list {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .shopping-cart {
+    padding: 0 10px;
+    gap: 15px;
+  }
+
+  .product-card {
+    padding: 1rem;
+  }
+
+  .product-img {
+    height: 200px;
+  }
+
+  .product-title {
+    font-size: 0.9rem;
+  }
+
+  .product-price {
+    font-size: 0.9rem;
+  }
+
+  .product-button {
+    font-size: 18px;
+    padding: 8px 15px;
+  }
+
+  .shopping-title,
+  .products-title {
+    font-size: 1.1rem;
+    padding: 0.8rem;
+  }
+
+  .footer {
+    font-size: 13px;
+    padding: 12px 0;
+  }
+}

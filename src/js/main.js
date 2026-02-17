@@ -124,7 +124,11 @@ productsList.addEventListener("click", (ev) => {
   });
 
   if (existProductOnShoppingCart === -1) {
+    // si NO está en el carrito, lo añadimos
     shoppingCart.push(product);
+  } else {
+    // si YA está en el carrito (botón Delete), lo eliminamos
+    shoppingCart.splice(existProductOnShoppingCart, 1);
   }
 
   //el hidden para quitar el boton
@@ -133,6 +137,33 @@ productsList.addEventListener("click", (ev) => {
   renderProducts(products, productsList);
 
   // guardar el carrito en el localStorage
+  localStorage.setItem("cart", JSON.stringify(shoppingCart));
+});
 
+// ELIMINAR PRODUCTOS DESDE LA CESTA
+shoppingCartList.addEventListener("click", (ev) => {
+  ev.preventDefault();
+  const productId = ev.target.dataset.id;
+
+  // si hago click fuera del botón, no hay id, me salgo
+  if (!productId) {
+    return;
+  }
+
+  // busco la posición del producto en el carrito
+  const productIndex = shoppingCart.findIndex((prd) => {
+    return Number(prd.id) === Number(productId);
+  });
+
+  // si lo encuentro, lo elimino del carrito
+  if (productIndex !== -1) {
+    shoppingCart.splice(productIndex, 1);
+  }
+
+  // vuelvo a renderizar ambas listas
+  renderProducts(shoppingCart, shoppingCartList, "hidden");
+  renderProducts(products, productsList);
+
+  // actualizo el localStorage
   localStorage.setItem("cart", JSON.stringify(shoppingCart));
 });
